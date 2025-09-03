@@ -45,6 +45,46 @@ nav a:hover {
   background-image: url('https://images.pexels.com/photos/414659/pexels-photo-414659.jpeg');
   padding: 2rem;
 }
+  /* About Us Section Styles */
+  .about-us {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+  }
+
+  /* Container for two columns */
+  .about-container {
+    display: flex; /* Use flexbox for two columns */
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 40px; /* More space between columns */
+    padding: 20px;
+  }
+
+  /* Left column styles */
+  .about-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px 20px;
+  }
+
+  /* Right column styles */
+  .about-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+  }
+
+  /* Placeholder image styling */
+  .about-right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
 
 .hero img {
   object-fit: cover;
@@ -53,6 +93,7 @@ nav a:hover {
 }
 
 .hero h1 {
+  color:#9BC995;
   font-size: 3rem;
   margin-bottom: 1rem;
 }
