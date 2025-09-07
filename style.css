@@ -6,6 +6,9 @@ body {
   color: #333;
 }
 
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Nova+Square:wght@400;700&display=swap');
+
 /* Navbar */
 nav {
   background-color: #e0e0e0;
@@ -34,74 +37,122 @@ nav a:hover {
   color: #555;
 }
 
+/* The Rotating Navbar Banner */
+/* This styles the banner at the top to fill the full width and use the ABeeZee font and your chosen color */
+.navbar-ticker {
+  width: 100vw; /* Make sure it fills the full viewport width */
+  position: fixed; /* Keep it at the very top */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Make sure it stays above other content */
+  overflow: hidden;
+  background-color: #323653; /* Use your hex code */
+  color: #fff;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  padding-left: 0; /* Remove left padding for full width */
+  font-family: 'ABeeZee', Arial, sans-serif; /* Use ABeeZee font */
+}
+
+.ticker-text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: moveText 25s linear infinite;
+}
+
+@keyframes moveText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 /* Hero Section */
 .hero {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  min-height: 100vh; /* Ensure it fills the viewport */
   text-align: center;
-  background-image: url('https://images.pexels.com/photos/414659/pexels-photo-414659.jpeg');
+  /* Use a reliable, public background image for demonstration */
+  background-image: url('TreeWater.jpg');
+  background-size: cover;         /* Fill the section */
+  background-position: center;    /* Center the image */
+  background-repeat: no-repeat;   /* Prevent tiling */
   padding: 2rem;
+  padding-top: 40px;    /* Add this line to offset for navbar-ticker */
 }
-  /* About Us Section Styles */
-  .about-us {
-    padding: 40px 0;
-    background-color: #f9f9f9;
-  }
 
-  /* Container for two columns */
-  .about-container {
-    display: flex; /* Use flexbox for two columns */
-    max-width: 900px;
-    margin: 0 auto;
-    gap: 40px; /* More space between columns */
-    padding: 20px;
-  }
-
-  /* Left column styles */
-  .about-left {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 30px 20px;
-  }
-
-  /* Right column styles */
-  .about-right {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 30px 20px;
-  }
-
-  /* Placeholder image styling */
-  .about-right img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-
-.hero img {
-  object-fit: cover;
-  height: 100px;
-  width: 100px;
+/* Style for the hero logo image */
+.hero img{
+  max-width: 500px;
+  width: 100%;
+  display: block;
+  margin: 20px auto; /* Center the image with margin */
+  border-radius: 8px; /* Optional: rounded corners */
 }
+
+/* About Us Section Styles */
+.about-us {
+  padding: 40px 0;
+  background-color: #f9f9f9;
+}
+
+/* Container for two columns */
+.about-container {
+  display: flex; /* Use flexbox for two columns */
+  max-width: 900px;
+  margin: 0 auto;
+  gap: 40px; /* More space between columns */
+  padding: 20px;
+}
+
+/* Left column styles */
+.about-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px 20px;
+}
+
+/* Right column styles */
+.about-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+}
+
+/* Placeholder image styling */
+.about-right img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
 
 .hero h1 {
-  color:#9BC995;
-  font-size: 3rem;
+  color: #E8EAE7;
+  font-size: 4rem;
   margin-bottom: 1rem;
+  font-family: 'ABeeZee', Arial, sans-serif;
 }
 
 .hero p {
+  color: #E8EAE7;
   font-size: 1.2rem;
   margin-bottom: 2rem;
   max-width: 600px;
+  font-family: 'ABeeZee', Arial, sans-serif;
 }
 
 .hero button {
@@ -111,8 +162,96 @@ nav a:hover {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   cursor: pointer;
+  font-family: 'ABeeZee', Arial, sans-serif;
 }
 
 .hero button:hover {
   background-color: #555;
+}
+
+/* Hide old dropdown styles (not used anymore) */
+.menu-dropdown {
+  display: none !important;
+}
+
+/* Three Column Info Section */
+.info-columns {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 60px auto;
+  padding: 40px 20px 0 20px;
+}
+
+.info-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-col-left img {
+  width: 100%;
+  max-width: 260px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+}
+
+.info-title {
+  font-family: 'Nova Square', 'Nova', Arial, sans-serif;
+  color: #3D3D3D;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.info-desc {
+  font-family: 'ABeeZee', Arial, sans-serif;
+  color: #3D3D3D;
+  font-size: 1.1rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Add a border and padding to the About Us and Motivations & Accomplishments columns */
+.info-col-middle, .info-col-right {
+  border: 2px solid #d1d1d1;      /* Simple gray border */
+  border-radius: 8px;             /* Rounded corners */
+  background-color: #f7f7f7;      /* Light background for readability */
+  padding: 24px 18px;             /* Space inside the border */
+  box-sizing: border-box;         /* Include padding in width */
+  /* Add a little shadow for depth (optional for beginners) */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+@media (max-width: 900px) {
+  .info-columns {
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 10px 0 10px;
+  }
+  .info-col-left img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Responsive: hide hamburger on wide screens, show on small screens */
+@media (max-width: 700px) {
+  nav ul {
+    display: none;            /* Hide normal nav links */
+  }
+}
+
+/* On wide screens, hide hamburger */
+@media (min-width: 701px) {
+  .menu-dropdown {
+    right: 2rem;
+    top: 60px;
+  }
 }
